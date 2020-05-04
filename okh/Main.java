@@ -124,7 +124,6 @@ public class Main {
 		}
 		
 		System.out.println("1. Constructive Heuristics");
-                System.out.println("2. Hill Climbing");
 	
 		int heuristics = input.nextInt();
 		
@@ -138,15 +137,6 @@ public class Main {
 			Solution bestSolution = new Solution(solution);
 			System.out.println("Jumlah Timeslot : " + bestSolution.getJumlahTimeslot());
 			System.out.println("Penalty : " + Utils.getPenalty(confMat, solution, jumlahSiswa));
-			break;
-		case 2 :
-			long startTime = System.nanoTime();
-			for(int i = 1; i <=10; i++)
-				Optimizer.hillClimbing(dir_stu, dir_crs, 100, 1000);
-			long endTime   = System.nanoTime();
-			long totalTime = endTime - startTime;
-			System.out.println((double)totalTime/1000000000 + " detik");
-			
 			break;
 		}
 		
